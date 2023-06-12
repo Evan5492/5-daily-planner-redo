@@ -1,6 +1,5 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+var currentDay = dayjs();
+$("#currentDay").text(currentDay.format("MM D YYYY, h:m:s A"));
 //$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -22,29 +21,8 @@
   // TODO: Add code to display the current date in the header of the page.
 //});
 
-function saveText() {
-  $(".saveBtn").on("click", function() {
-    time = $(this).parent($(".row time-block")).attr("id")
-    text = $(this).siblings(".description").val()
-    localStorage.setItem(time,text)
-  })
-};
-
-function showText() {
-  $("9AM").val(localStorage.getItem("hour-9"))
-  $("9AM").val(localStorage.getItem("hour-10"))
-  $("9AM").val(localStorage.getItem("hour-11"))
-  $("9AM").val(localStorage.getItem("hour-12"))
-  $("9AM").val(localStorage.getItem("hour-1"))
-  $("9AM").val(localStorage.getItem("hour-2"))
-  $("9AM").val(localStorage.getItem("hour-3"))
-  $("9AM").val(localStorage.getItem("hour-4"))
-  $("9AM").val(localStorage.getItem("hour-5"))
-};
 
 
 
 
 
-saveText();
-showText();
